@@ -1,0 +1,40 @@
+table {
+  border-collapse: collapse;
+  margin: 30px auto;
+  font-family: sans-serif;
+  width: 800px;
+  table-layout: fixed;
+}
+
+tr {
+  height: 40px;
+}
+
+td {
+  border: 2px solid black;
+  text-align: center;
+  font-weight: bold;
+  word-wrap: break-word;
+}
+
+.row-1 td {
+  background-color: #098f8f;
+  color: #ffffff;
+  transition: 0.3s;
+}
+
+.row-2 td {
+  background-color: #f5f509;
+  color: #000000;
+  transition: 0.3s;
+}
+
+.row-1:hover td {
+  background-color: #f5f509;
+  color: #000000;
+}
+
+.row-2:hover td {
+  background-color: #098f8f;
+  color: #ffffff;
+}
