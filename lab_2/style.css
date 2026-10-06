@@ -38,3 +38,35 @@ td {
   background-color: #098f8f;
   color: #ffffff;
 }
+
+.japan-flag {
+  width: 300px;
+  height: 200px;
+  background-color: #ffffff;
+  border: 1px solid black;
+  margin: 20px auto 40px auto;
+  position: relative;
+}
+
+.sun-position {
+  width: 120px;
+  height: 120px;
+  background-color: #cc0001;
+  border-radius: 50%;
+  
+  position: absolute;
+  top: 40px;
+  left: 90px;
+}
+
+.sun-transform {
+  width: 120px;
+  height: 120px;
+  background-color: #cc0001;
+  border-radius: 50%;
+  
+  position: absolute; 
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
