@@ -1,9 +1,13 @@
-.clicked-style-10 {
+.color-variant-1 {
     background-color: #66c2ff;
+    color: #0f4264;
+}
+
+.color-variant-2 {
+    background-color: #248047;
     color: #ffffff;
 }
 
-.clicked-style-11 {
-    background-color: #29f16c;
-    color: #ffffff;
+#element-10::marker {
+    color: black;
 }
