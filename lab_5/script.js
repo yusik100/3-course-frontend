@@ -1,3 +1,5 @@
+// Завдання 1
+
 document.getElementById('infoForm').addEventListener('submit', function(event) {
     event.preventDefault();
 
@@ -47,3 +49,53 @@ document.getElementById('infoForm').addEventListener('submit', function(event) {
         resultWindow.document.body.innerHTML = htmlContent;
     }
 });
+
+// Завдання 2
+
+const tableContainer = document.getElementById('table-container');
+const colorPicker = document.getElementById('color-picker');
+
+const TARGET_CELL_NUMBER = 9;
+const table = document.createElement('table');
+let cellCounter = 1;
+
+for (let i = 0; i < 6; i++) {
+    const tr = document.createElement('tr');
+    
+    for (let j = 0; j < 6; j++) {
+        const td = document.createElement('td');
+        td.textContent = cellCounter;
+        td.dataset.row = i;
+        td.dataset.col = j;
+        
+        if (cellCounter === TARGET_CELL_NUMBER) {
+            
+            td.addEventListener('mouseover', function() {
+                const randomColor = '#' + Math.floor(Math.random()*16777215).toString(16);
+                this.style.backgroundColor = randomColor;
+            });
+
+            td.addEventListener('click', function() {
+                this.style.backgroundColor = colorPicker.value;
+            });
+
+            td.addEventListener('dblclick', function() {
+                const startRow = parseInt(this.dataset.row);
+                const colIndex = parseInt(this.dataset.col);
+                const chosenColor = colorPicker.value;
+                const allRows = table.querySelectorAll('tr');
+
+                for (let r = startRow; r < 6; r += 2) {
+                    const targetCell = allRows[r].querySelectorAll('td')[colIndex];
+                    targetCell.style.backgroundColor = chosenColor;
+                }
+            });
+        }
+        
+        tr.appendChild(td);
+        cellCounter++;
+    }
+    table.appendChild(tr);
+}
+
+tableContainer.appendChild(table);
